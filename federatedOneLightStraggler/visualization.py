@@ -34,7 +34,7 @@ EXPERIMENTS = {
     },
     'async_adaptive': {
         'path': 'async_adaptive_staleness_results.json',
-        'label': 'Async (Adaptive Threshold - Our Contribution)',
+        'label': 'Async (Adaptive Threshold)',
         'color': '#000000', 'marker': '*', 'linestyle': '-', 'linewidth': 3 
     }
 }
@@ -70,7 +70,7 @@ def create_main_comparison_plot(data):
                     marker=config['marker'], linestyle=config['linestyle'], 
                     linewidth=2.5, markersize=8)
 
-    ax.axhline(y=60.0, color='grey', linestyle='--', linewidth=1.5, label='60% Target Accuracy')
+    ax.axhline(y=65.0, color='grey', linestyle='--', linewidth=1.5, label='65% Target Accuracy')
     ax.set_xlabel('Wall-Clock Time (seconds)', fontsize=14)
     ax.set_ylabel('Global Model Accuracy (%)', fontsize=14)
     ax.set_title('Convergence Comparison in a Light Straggler Environment', fontsize=18, pad=20)
@@ -100,8 +100,10 @@ def create_ablation_study_plot(data):
 
     ax.set_xlabel('Wall-Clock Time (seconds)', fontsize=14)
     ax.set_ylabel('Global Model Accuracy (%)', fontsize=14)
-    ax.set_title('Ablation Study of Asynchronous Staleness Mitigation Techniques', fontsize=18, pad=20)
+    ax.set_title('Ablation Study of Asynchronous Staleness Mitigation Techniques in a Light Straggler Environment', fontsize=18, pad=20)
     ax.legend(fontsize=12)
+
+    ax.legend(fontsize=12, loc='lower right')
     ax.tick_params(axis='both', which='major', labelsize=12)
     ax.set_ylim(bottom=0) 
     ax.set_xlim(left=0)

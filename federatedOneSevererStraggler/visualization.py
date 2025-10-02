@@ -99,7 +99,7 @@ def create_ablation_study_plot(data):
 
     ax.set_xlabel('Wall-Clock Time (seconds)', fontsize=14)
     ax.set_ylabel('Global Model Accuracy (%)', fontsize=14)
-    ax.set_title('Ablation Study of Asynchronous Staleness Mitigation Techniques', fontsize=18, pad=20)
+    ax.set_title('Ablation Study of Asynchronous Staleness Mitigation Techniques in a Severer Straggler Environment', fontsize=18, pad=20)
     ax.legend(fontsize=12)
     ax.tick_params(axis='both', which='major', labelsize=12)
     ax.set_ylim(bottom=0) 
